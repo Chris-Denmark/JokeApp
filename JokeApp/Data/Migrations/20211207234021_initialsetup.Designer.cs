@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JokeApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211207233001_initialsetup")]
+    [Migration("20211207234021_initialsetup")]
     partial class initialsetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,11 +28,11 @@ namespace JokeApp.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("JokeAnswer")
-                        .HasColumnType("int");
+                    b.Property<string>("JokeAnswer")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("JokeQuestion")
-                        .HasColumnType("int");
+                    b.Property<string>("JokeQuestion")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
